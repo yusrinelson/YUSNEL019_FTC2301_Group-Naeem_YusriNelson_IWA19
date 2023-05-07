@@ -319,4 +319,4 @@ dataSearchForm.addEventListener("submit", (event) => {
     dataSearchForm.reset();
 });
 
-/////////////////////////////
+////////////////////////////////////

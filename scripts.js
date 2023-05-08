@@ -217,9 +217,9 @@ dataListButton.innerHTML =
     <span class="list__remaining"> (${matches.length - page * BOOKS_PER_PAGE > 0 ? matches.length - page * BOOKS_PER_PAGE : 0})</span>`;
 
 dataListButton.addEventListener("click", () => {
-    const start = (page - 1) * BOOKS_PER_PAGE;
-    const end = start + BOOKS_PER_PAGE;
-    const newBook = books.slice(start, end);
+    const start = (page) * BOOKS_PER_PAGE
+    const end = start + (BOOKS_PER_PAGE)
+    const newBook = books.slice(start, end)
     const newBookFragment = document.createDocumentFragment();                   //contains all the book previews which is appended to a container element in the DOM
     /** creates a preview of the book by calling the function createPreview()
      * 
@@ -230,13 +230,14 @@ dataListButton.addEventListener("click", () => {
         newBookFragment.appendChild(showPreview);
     }
     dataListItems.appendChild(newBookFragment);
+
     const remaining = matches.length - page * BOOKS_PER_PAGE;
     dataListButton.innerHTML = /* HTML */ `
       <span>Show more</span>
       <span class="list__remaining"> (${remaining > 0 ? remaining : 0})</span>
     `;
     dataListButton.disabled = remaining <= 0;
-    page = page + 1;
+    page =  page + 1;
 });
 
 
